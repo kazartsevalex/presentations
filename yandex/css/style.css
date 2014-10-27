@@ -1,0 +1,194 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
+:focus { outline: 0; }
+body { font-family: Arial, sans-serif; font-size: 12px; }
+ol, ul { list-style: none; }
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { font-weight: normal; text-align: left; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+a img { border: 0; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after { display: table; line-height: 0; content: ""; }
+.clearfix:after { clear: both; }
+.alignleft { float: left; }
+.alignright { float: right; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+#main {
+    width: 100%;
+    min-width: 960px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+label {
+    width: 120px;
+    display: block;
+    font-weight: bold;
+    padding: 50px 0 20px 5%;
+    cursor: pointer;
+    position: relative;
+}
+
+label:after {
+    display: block;
+    content: '';
+    border-top: 5px solid #000;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+}
+
+label:before {
+    display: block;
+    content: 'Click to toggle presentation visibility';
+    position: absolute;
+    right: -220px;
+    bottom: 20px;
+    color: #ccc;
+    font-weight: normal;
+}
+
+input[name="presentation"] { display: none; }
+input[name="presentation"]:checked ~ .presentation-container  { display: block !important; }
+input[name="presentation"]:checked ~ .current-slide  { display: block; }
+input[name="presentation"]:checked ~ label:after {
+    border-top: none;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 5px solid #000;
+}
+
+.current-slide {
+    background: #e6e6e6;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.current-slide-content {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.presentation {
+    border-bottom: 2px solid #ccc;
+}
+
+.presentation-container {
+    padding: 0 5%;
+    margin: 0 0 100px;
+    position: relative;
+}
+
+.controls { position: relative; }
+
+.presentation-content {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.control-prev, .control-next {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.control-prev {
+    border-right: 10px solid #000;
+    left: -3%;
+}
+
+.control-next {
+    border-left: 10px solid #000;
+    right: -3%;
+}
+
+.inactive { cursor: default; }
+.control-prev.inactive { border-right: 10px solid #ccc; }
+.control-next.inactive { border-left: 10px solid #ccc; }
+.control-prev:hover { border-right: 10px solid #ff0000; }
+.control-next:hover { border-left: 10px solid #ff0000; }
+.control-prev.inactive:hover { border-right: 10px solid #ccc; }
+.control-next.inactive:hover { border-left: 10px solid #ccc; }
+
+.presentation-content > ul { position: absolute; }
+
+.presentation-item {
+    float: left;
+    position: relative;
+}
+
+.presentation-item:hover, .presentation-item.current { background: #e6e6e6; }
+
+.picture-item { 
+    width: 100%; 
+    line-height: 0;
+}
+
+.picture-item > img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.current-slide .picture-item {
+    max-width: 500px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.presentation-item article { display: none; }
+.presentation-item h2 { 
+    font-size: 18px;
+    line-height: 25px;
+    padding: 0;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: fixed; 
+    z-index: 5000;
+    top: 0;
+}
+
+#loader {
+    width: 220px;
+    height: 19px;
+    background: url('../images/loading.gif');
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -110px;
+    position: absolute;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0 0 7px 0;
+}
+
+h2::first-letter { color: #ff0000; }
+
+p { 
+    line-height: 18px;
+    padding: 5px 0;
+}
+article ul {
+    list-style: disc;
+    padding: 5px 0 5px 30px;
+}
+article ul li {
+    line-height: 18px;
+    padding: 0 0 5px;
+}
